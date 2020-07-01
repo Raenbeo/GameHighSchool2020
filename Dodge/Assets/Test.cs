@@ -9,6 +9,8 @@ public class Test : EditorWindow
         Test window = (Test)EditorWindow.GetWindow(typeof(Test));
         window.Show();
     }
+
+    [System.Obsolete]
     void OnGUI()
     {
         Handles.color = Color.blue;

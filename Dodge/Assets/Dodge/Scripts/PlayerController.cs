@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +7,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -22,17 +20,17 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-        float xAxis = Input.GetAxis("Horizontal");
-        float yAxis = Input.GetAxis("Vertical");
-        float fire1Axis = Input.GetAxis("Fire1");
+        //float xAxis = Input.GetAxis("Horizontal");
+        //float yAxis = Input.GetAxis("Vertical");
+        //float fire1Axis = Input.GetAxis("Fire1");
 
-        if(fire1Axis >= 0.5)
-        {
-            Debug.Log("파이어엑시스");
-            Die();
-        }
+        //if(fire1Axis >= 0.5)
+        //{
+        //    Debug.Log("파이어엑시스");
+        //    Die();
+        //}
 
-        rigidbody.AddForce(new Vector3(xAxis,0,yAxis) * speed);
+        //rigidbody.AddForce(new Vector3(xAxis,0,yAxis) * speed);
 
         if (Input.GetKey(KeyCode.DownArrow))
             rigidbody.AddForce(Vector3.back * speed);
