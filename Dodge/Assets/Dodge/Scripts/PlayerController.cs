@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
+    public GameManager  m_GameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,6 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         Debug.Log("뒈쥠");
-        gameObject.SetActive(false);
+        m_GameManager.GameOver();
     }
 }

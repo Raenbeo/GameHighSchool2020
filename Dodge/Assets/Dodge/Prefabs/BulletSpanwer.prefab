@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 631020795695998003}
   m_Layer: 0
   m_Name: BulletSpanwer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,5 +110,4 @@ MonoBehaviour:
   m_playerTransfom: {fileID: 0}
   m_Bullet: {fileID: 8436159595227266232, guid: b44f451ca0a7a3e48b6ef88340f4319e,
     type: 3}
-  m_rotationSpeed: 10
   setAttackTime: 1
