@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   setDeathTime: 5
+  Velocity: {x: 0, y: 0, z: 0}
