@@ -1245,8 +1245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartPoint: {fileID: 1864316522}
   m_Player: {fileID: 1209358560}
-  m_ClearUi: {fileID: 0}
-  m_ScoreUi: {fileID: 0}
+  m_ClearUi: {fileID: 1376851295}
+  m_ScoreUi: {fileID: 1077285970}
+  m_IsPlaying: 0
+  m_Score: 0
 --- !u!4 &911279968
 Transform:
   m_ObjectHideFlags: 0
@@ -1909,7 +1911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.7, y: -55.3}
+  m_AnchoredPosition: {x: 4.7, y: -16}
   m_SizeDelta: {x: 678.58887, y: 288.11267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376851295
@@ -1933,12 +1935,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 130
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 130
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2254,9 +2256,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1376851293}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 911279967}
+        m_MethodName: GameClear
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

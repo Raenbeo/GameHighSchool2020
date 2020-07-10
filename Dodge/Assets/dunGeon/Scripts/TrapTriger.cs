@@ -9,7 +9,7 @@ public class TrapTriger : MonoBehaviour
     public string TrapKinds = "";
     
     public GameObject m_Enemy = null;
-    GameObject enemy;
+   // GameObject  enemy;
 
     public UnityEvent m_OnEnter;
 
