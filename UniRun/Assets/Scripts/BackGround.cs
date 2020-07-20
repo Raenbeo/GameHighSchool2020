@@ -10,7 +10,7 @@ public class BackGround : MonoBehaviour
     private void Awake()
     {
         var collider = GetComponent<BoxCollider2D>();
-        width = collider.size.x;
+        width = collider.size.x-1;
     }
 
     void Update()

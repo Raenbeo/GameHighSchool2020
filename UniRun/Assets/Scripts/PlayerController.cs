@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public Animator m_Animator;
     public Rigidbody2D m_rigidbody2d;
+
     public AudioSource m_AudioSource;
 
     public AudioClip m_jump;
-    public AudioClip m_dead;
+    public AudioClip m_Death;
 
     public bool m_IsGround = false;
     public bool m_IsDead = false;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         m_rigidbody2d = GetComponent<Rigidbody2D>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,17 +32,20 @@ public class PlayerController : MonoBehaviour
         if (m_IsDead) return;
 
        m_Animator.SetBool("IsGround", m_IsGround);
-       
-        if (Input.GetKeyDown(KeyCode.Space) && m_IsJump < 2)
-        {
-            m_rigidbody2d.velocity = m_rigidbody2d.velocity * 0.2f;
-            m_rigidbody2d.AddForce(Vector2.up * speed);
-            m_IsJump++;
 
-            m_AudioSource.clip = m_jump;
-            m_AudioSource.Play();
+        if (Input.GetKeyDown(KeyCode.Space)) Jump();
+    }
 
-        }
+    public void Jump()
+    {
+         if (m_IsJump < 2)
+         {
+             m_rigidbody2d.velocity = m_rigidbody2d.velocity * 0.2f;
+             m_rigidbody2d.AddForce(Vector2.up * speed);
+             m_IsJump++;
+             m_AudioSource.clip = m_jump;
+             m_AudioSource.Play();
+         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -64,11 +69,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "DeadZone")
         {
+            m_AudioSource.clip = m_Death;
+            m_AudioSource.Play();
             m_IsDead = true;
             m_Animator.SetBool("IsDead",m_IsDead);
             GameManager.Instance.OnPlayerDead();
-            m_AudioSource.clip = m_dead;
-            m_AudioSource.Play();
         }
     }
 
