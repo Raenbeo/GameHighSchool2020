@@ -116,4 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Bullet: {fileID: 6700301257506848968}
   speed: 5
-  destoryTime: 5
+  destoryTime: 2

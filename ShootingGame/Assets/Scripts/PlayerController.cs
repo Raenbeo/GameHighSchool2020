@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject m_Bullet;
-    public GameObject m_BulletSpanwPos;
+    public Transform[] m_BulletSpanwPos;
 
 
     public float speed = 30;
@@ -41,8 +41,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            GameObject bullet = GameObject.Instantiate(m_Bullet);
-            bullet.transform.position = m_BulletSpanwPos.transform.position;
+            foreach(var ain in m_BulletSpanwPos)
+            {   
+             GameObject bullet = GameObject.Instantiate(m_Bullet,ain.transform.position,ain.transform.rotation);
+            }
         }
     }
 }
