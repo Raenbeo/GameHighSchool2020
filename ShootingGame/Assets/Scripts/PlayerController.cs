@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     public float setAttackTime = 0;
 
 
+    public Animator m_Animator;
+
+
+    public bool m_IsDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +50,20 @@ public class PlayerController : MonoBehaviour
             {   
              GameObject bullet = GameObject.Instantiate(m_Bullet,ain.transform.position,ain.transform.rotation);
             }
+        }
+    }
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyBullet")
+        {
+            m_IsDead = true;
+            m_Animator.SetBool("IsDead", m_IsDead);
+            Debug.Log("히어로 뒈졈");
         }
     }
 }
