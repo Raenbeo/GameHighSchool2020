@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
 
 
     float inGameTime = 0;
+  
     public float setAttackTime = 0;
 
     // Start is called before the first frame update
@@ -31,13 +32,15 @@ public class Enemy : MonoBehaviour
         m_Animator.SetBool("IsDead", m_IsDead);
 
         inGameTime += Time.deltaTime;
-
+       
         if (setAttackTime <= inGameTime)
         {
             Attack();
             inGameTime = 0;
         }
+       
     }
+   
     public void Attack()
     {
        GameObject bullet = GameObject.Instantiate(m_Bullet);
@@ -46,6 +49,7 @@ public class Enemy : MonoBehaviour
     }
     public void DestroyObject()
     {
+        GameManager.Instance.AddScore();
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

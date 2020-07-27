@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             m_IsDead = true;
             m_Animator.SetBool("IsDead", m_IsDead);
+            GameManager.Instance.OnPlayerDie();
             Debug.Log("히어로 뒈졈");
         }
     }
