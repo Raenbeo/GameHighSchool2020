@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         isClimbing = false;
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         foreach(ContactPoint2D contact in collision.contacts)
@@ -105,10 +106,16 @@ public class PlayerController : MonoBehaviour
                     var hp = contact.rigidbody.GetComponent<HPComponent>();
                     if(hp)
                     {
-                        Destroy(hp.gameObject);
+                        hp.TakeDamage(10);
                     }
                 }
-                     
+            }
+
+            else if (contact.rigidbody && contact.rigidbody.tag == "Enemy")
+            {
+                var hp = contact.rigidbody.GetComponent<HPComponent>();
+                hp.TakeDamage(10);
+                animator.SetTrigger("TakeDamage");
             }
         }
     }

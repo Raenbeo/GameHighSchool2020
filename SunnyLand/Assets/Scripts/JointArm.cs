@@ -11,6 +11,7 @@ public class JointArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!Target)
         transform.position = Target.position + Offset;
     }
 }
