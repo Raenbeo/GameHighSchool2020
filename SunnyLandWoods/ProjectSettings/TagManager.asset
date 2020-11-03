@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Movement
   - SideBlock
   - 
-  - 
-  - 
+  - AttackBox
+  - HitBox
   - 
   - 
   - 
@@ -41,15 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
-    uniqueID: 2038121957
+  - name: Back
+    uniqueID: 1383505623
     locked: 0
-  - name: MiddleGround
-    uniqueID: 3728792581
+  - name: middle
+    uniqueID: 596388539
     locked: 0
-  - name: Plane
-    uniqueID: 4039685969
-    locked: 0
-  - name: Character
-    uniqueID: 2239310157
+  - name: object
+    uniqueID: 3918703179
     locked: 0
