@@ -7,6 +7,7 @@ using UnityEngine.XR.WSA.Input;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public CubeSpawner cubespawner;
     public int Life = 0;
     public int Score = 0;
 
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+
+        cubespawner.SpawnStart();
     }
 
     public void AddScore()
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
         {
             IsPlaying = false;
             GameOver.SetActive(true);
+            cubespawner.gameObject.SetActive(false);
+            LIFE.text = string.Format("Life : 0");
         } 
     }
     // Start is called before the first frame update
